@@ -15,7 +15,7 @@ class Matriz{
 
     ~Matriz();
     Matriz(string,int,int);
-    int buscarDet(int**,int);
+    int buscarDet(int**);
 
     int getSize();
     void setSize(int);

@@ -2,11 +2,17 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::vector;
+using std::endl;
+//using std::begins;
+//using std::erase;
 
 int main(){
   int resp = 0;
   string nombr = "";
+  int posBorrar = 0;
   Matriz* matrix = new Matriz();
   vector <Matriz*> lista_Matrices;
   do {
@@ -44,14 +50,17 @@ int main(){
       }break;
 
       case 3:{
+        //eliminar
         for (int i = 0; i < lista_Matrices.size(); i++) {
           cout<<i<<") "<<lista_Matrices.at(i)->getNombre()<<endl;
         }
         cout<<"Ingrese matriz a eliminar"<<endl;
+        cin>>posBorrar;
+        //lista_Matrices.erase(lista_Matrices.begins()+posBorrar,lista_Matrices.begins()+y+1);
       }break;
 
       case 4:{
-
+        //operaciones master race
       }break;
 
       default:

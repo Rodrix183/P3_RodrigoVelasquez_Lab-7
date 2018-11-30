@@ -1,4 +1,8 @@
 #include "Matriz.h"
+#include <iostream>
+
+using std::cout;
+using std::endl;
 
 Matriz::Matriz(){
 
@@ -50,29 +54,36 @@ int Matriz::buscarDet(int** matrix){
 
 //suma
 int** Matriz::operator | (int**){
-
+  int** num;
+  return num;
 }
 //incremento
 int Matriz::operator ++ (int){
-
+  int num = 0;
+  return num;
 }
 //decremento
 int Matriz::operator -- (int){
-
+int num = 0;
+return num;
 }
 //mutliplicacion por escalar
 int Matriz::operator < (int){
-
+  int num = 0;
+  return num;
 }
 //producto de Matrices
 int** Matriz::operator & (int**){
-
+  int** num;
+  return num;
 }
 //suma dentro de espacio vectorial
 int** Matriz::operator + (int**){
-
+  int** num;
+  return num;
 }
 //multiplicacion dentro de espacio vectorial
 int** Matriz::operator * (int**){
-
+  int** num;
+  return num;
 }
