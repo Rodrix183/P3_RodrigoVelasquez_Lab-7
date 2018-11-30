@@ -14,11 +14,14 @@ class Matriz{
     Matriz();
 
     ~Matriz();
-    Matriz(string,int,int);
+    Matriz(string,int,int,int**);
     int buscarDet(int**);
 
     int getSize();
     void setSize(int);
+
+    int** getMatriz();
+    void setMatriz(int**);
 
     string getNombre();
     void setNombre(string);
@@ -26,9 +29,9 @@ class Matriz{
     //suma
     int** operator | (int**);
     //incremento
-    int operator ++ (int);
+    int operator ++ ();
     //decremento
-    int operator -- (int);
+    int operator -- ();
     //mutliplicacion por escalar
     int operator < (int);
     //producto de Matrices
