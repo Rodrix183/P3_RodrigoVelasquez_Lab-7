@@ -14,12 +14,15 @@ class Matriz{
     Matriz();
 
     ~Matriz();
-    Matriz(int,int);
+    Matriz(string,int,int);
     int buscarDet(int**,int);
 
     int getSize();
     void setSize(int);
-    
+
+    string getNombre();
+    void setNombre(string);
+
     //suma
     int** operator | (int**);
     //incremento
