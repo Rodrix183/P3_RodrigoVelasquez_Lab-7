@@ -21,6 +21,8 @@ int main(){
 
   int posMat1 = 0;
   int posMat2 = 0;
+  int posINC = 0;
+  int posDEC = 0;
   Matriz* matrix = new Matriz();
   vector <Matriz*> lista_Matrices;
   do {
@@ -130,12 +132,12 @@ int main(){
               cout<<i<<") "<<lista_Matrices.at(i)->getNombre()<<endl;
             }
             cout<<"Ingrese matriz"<<endl;
-            cin>>posBorrar;
+            cin>>posINC;
 
-            int** array = lista_Matrices.at(posBorrar)->getMatriz();
-
-            matrix->buscarDet(array);
-
+            int** arrayINC = lista_Matrices.at(posINC)->getMatriz();
+            int tamanio = lista_Matrices.at(posINC)->getSize();
+            int d = matrix->buscarDet(arrayINC,tamanio);
+            cout<<"Determinante: "<<d<<endl;
 
           }break;
 
@@ -145,7 +147,13 @@ int main(){
               cout<<i<<") "<<lista_Matrices.at(i)->getNombre()<<endl;
             }
             cout<<"Ingrese matriz"<<endl;
-            cin>>posBorrar;
+            cin>>posDEC;
+
+            int** arrayDEC = lista_Matrices.at(posDEC)->getMatriz();
+            int tamanio = lista_Matrices.at(posDEC)->getSize();
+            int d = matrix->buscarDet(arrayDEC,tamanio);
+            cout<<"Determinante: "<<d<<endl;
+
           }break;
 
           case 4:{

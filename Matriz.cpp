@@ -42,26 +42,36 @@ void Matriz::setNombre(string na){
   nombre_mat = na;
 }
 
-int Matriz::buscarDet(int** matrix){
+int Matriz::buscarDet(int** matrix,int s){
   int pos = 0;
   int neg = 0;
-  if (size == 2) {
-    this->determinante = (matrix[0][0]*matrix[1][1])-(matrix[0][1]*matrix[1][0]);
-    cout<<"Determinante: "<<this->determinante<<endl;
-  }else if(size == 3){
+  int d = 0;
+  if (s == 2) {
+    pos = matrix[0][0] * matrix[1][1];
+    neg = matrix[0][1] * matrix[1][0];
+    /*for (int i = 0; i < 2; i++) {
+      for (int j = 0; j < 2; j++) {
+        if (i == j) {
+          pos *= matrix[i][j];
+        }else if(){
+          neg *= matrix[i][j];
+        }
+      }
+    }*/
+    //cout<<"Determinante: "<<this->determinante<<endl;
+    d = pos - neg;
+  }else if(s == 3){
     //metodo sarrus
     pos = (matrix[0][0]*matrix[1][1]*matrix[2][2])+(matrix[0][1]*matrix[1][2]*matrix[2][0])
     +(matrix[0][1]*matrix[1][2]*matrix[2][0]);
 
     neg = (matrix[2][0]*matrix[1][1]*matrix[0][2])+(matrix[2][1]*matrix[1][2]*matrix[0][0])
     +(matrix[2][2]*matrix[1][0]*matrix[0][1]);
-
-    this->determinante = pos - neg;
-    cout<<"Determinante: "<<this->determinante<<endl;
+    d = pos - neg;
   }else{
-    cout<<"Tamano no valido"<<endl;
+    //cout<<"Tamano no valido"<<endl;
   }
-  return this->determinante;
+  return d;
 }
 
 //suma
@@ -72,23 +82,35 @@ int** Matriz::operator | (int**){
 //incremento
 int Matriz::operator ++ (){
   int increase = 0;
-  increase = abs (this->determinante - this->size);
-  for (int i = 0; i < this->size; i++) {
-    for (int j = 0; j < this->size; j++) {
-      this->matriz[i][j]+=increase;
+int d = 0;
+int s = 0;
+int** mtx;
+  increase = abs (d - s);
+  for (int i = 0; i < s; i++) {
+    for (int j = 0; j < s; j++) {
+      mtx[i][j]+=increase;
+      cout<<" "<<mtx[i][j];
     }
+    cout<<endl;
   }
+  cout<<endl;
   return increase;
 }
 //decremento
 int Matriz::operator -- (){
   int decrease = 0;
-  decrease = abs (this->determinante - this->size);
-  for (int i = 0; i < this->size; i++) {
-    for (int j = 0; j < this->size; j++) {
-      this->matriz[i][j]-=decrease;
+int d = 0;
+int s = 0;
+int** mtx;
+  decrease = abs (d - s);
+  for (int i = 0; i < s; i++) {
+    for (int j = 0; j < s; j++) {
+      mtx[i][j]-=decrease;
+      cout<<" "<<mtx[i][j];
     }
+    cout<<endl;
   }
+  cout<<endl;
   return decrease;
 }
 //mutliplicacion por escalar
